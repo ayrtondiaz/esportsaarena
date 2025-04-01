@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esports Arena | JUL 20</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="neon-animations.css">
+</head>
+<body>
+    <!-- Elementos de fondo gaming (solo grid y orbs, plexus se moverá) -->
+    <div class="grid"></div>
+    <div class="orb-container">
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+    <!-- Fin elementos de fondo gaming -->
+    
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-container">
+                        <a href="./index.html"><img src="/assets/logo.png" style="width: 30%;" alt="Esports Arena Logo" class="logo"></a>
+                        <!-- <span class="date-badge">JUL 20</span> -->
+                    </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="info.html" id="infoDropdown" role="button">
+                            INFO
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" href="info.html#about">SOBRE NOSOTROS</a></li>
+                            <li><a class="dropdown-item" href="info.html#faqs">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">CRONOGRAMA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ENTRADAS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTO</a></li>
+                </ul>
+                <a class="navbar-brand ms-auto" href="index.html">
+                    <div class="logo-container">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mascotits-o1yluqwcoFq6kZksDY54adv2e95QFu.png" alt="Esports Arena Logo" class="logo-mascot">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Carousel -->
+    <section id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Contenido sin cambios -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-image-container">
+                    <img src="/assets/carrusel.jpg?height=1200&width=1200" class="d-block w-100" alt="Esports Event">
+                    <div class="flame-overlay"></div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-image-container">
+                    <img src="/assets/GRANULADO.png?height=1200&width=1200" class="d-block w-100" alt="Esports Event">
+                    <div class="flame-overlay"></div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-image-container">
+                    <img src="/assets/convenciones.png?height=1200&width=1200" class="d-block w-100" alt="Esports Event">
+                    <div class="flame-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"></button>
+        </div>
+    </section>
+
+    <!-- Sección de fondo con plexus para las demás secciones -->
+    <div id="plexus-background-container">
+        <!-- Canvas de plexus solo para esta sección -->
+        <canvas id="plexus-canvas"></canvas>
+
+        <!-- Featured Teams -->
+        <section id="featured-teams" class="py-5">
+            <!-- Contenido sin cambios -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Team Vitality" class="img-fluid">
+                            <div class="team-info">
+                                <h3>VITALITY</h3>
+                                <p>Presentamos la nueva máscota que nos acompañará en este evento, el es "NOA".</p>
+                                <p class="team-hashtag">#esports #gaming #championship</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Team NOA" class="img-fluid">
+                            <div class="team-info">
+                                <h3>NOA</h3>
+                                <p>Presentamos la nueva máscota que nos acompañará en este evento, el es "NOA".</p>
+                                <p class="team-hashtag">#esports #gaming #championship</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Main Stage" class="img-fluid">
+                            <div class="team-info">
+                                <h3>MAIN STAGE</h3>
+                                <p>Presentamos la nueva máscota que nos acompañará en este evento, el es "NOA".</p>
+                                <p class="team-hashtag">#esports #gaming #championship</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tickets CTA -->
+        <section id="tickets-cta" class="py-5">
+            <!-- Contenido sin cambios -->
+            <div class="container text-center">
+                <div class="cta-box">
+                    <h2 class="glow-text">ADQUIRÍ TUS ENTRADAS YA!</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors -->
+        <section id="sponsors" class="py-5">
+            <!-- Contenido sin cambios -->
+            <div class="container text-center">
+                <h2 class="section-title">PATROCINA</h2>
+                <div class="row sponsors-row">
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Globant" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Speed Unlimited" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="AMD" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Samsung" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section id="partners" class="py-5">
+            <!-- Contenido sin cambios -->
+            <div class="container text-center">
+                <h2 class="section-title">ACOMPAÑA</h2>
+                <div class="row sponsors-row">
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Clutch" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Partner 2" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Partner 3" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Partner 4" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="more-partners" class="py-5">
+            <!-- Contenido sin cambios -->
+            <div class="container text-center">
+                <h2 class="section-title">PARTNERS</h2>
+                <div class="row sponsors-row">
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="PUE" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Partner 2" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Partner 3" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/placeholder.svg?height=80&width=150" alt="Partner 4" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <!-- Contenido sin cambios -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-social">
+                        <h3>SÍGUENOS</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="footer-logo">
+                        <img src="/placeholder.svg?height=100&width=100" alt="NOA Mascot" class="img-fluid">
+                        <p class="hashtag">#SOMOSELHORTE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="menu-active.js"></script>
+    <script src="plexus-background.js"></script>
+</body>
+</html>
+
